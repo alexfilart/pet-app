@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { supabase } from '../../../lib/supabaseClient'
+import DeleteButton from './DeleteButton'
 
 export default async function PetDetail({ params }) {
   const { id } = await params
@@ -21,7 +22,16 @@ export default async function PetDetail({ params }) {
         ← Back to all pets
       </Link>
 
-      <h1 className="text-2xl font-bold mt-4 mb-1">{pet.name}</h1>
+      <div className="flex justify-between items-start mt-4 mb-1">
+        <h1 className="text-2xl font-bold">{pet.name}</h1>
+        <div className="flex gap-3">
+          <Link href={`/pets/${pet.id}/edit`} className="text-sm hover:underline">
+            Edit
+          </Link>
+          <DeleteButton petId={pet.id}/>
+        </div>
+      </div>
+
       <p className="text-gray-500 mb-6">
         {pet.species}{pet.breed ? ` · ${pet.breed}` : ''}
       </p>
