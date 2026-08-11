@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { supabase } from '../../../lib/supabaseClient'
 import DeleteButton from './DeleteButton'
 
+export const dynamic = 'force-dynamic'
+
 export default async function PetDetail({ params }) {
   const { id } = await params
 
