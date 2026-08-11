@@ -42,6 +42,7 @@ export default function AddPet() {
       return
     }
 
+    router.refresh()
     router.push('/')
   }
 
