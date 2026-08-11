@@ -21,6 +21,7 @@ export default function DeleteButton({ petId }) {
       return
     }
 
+    router.refresh()
     router.push('/')
   }
 
