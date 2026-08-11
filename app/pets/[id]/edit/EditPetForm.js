@@ -43,8 +43,7 @@ export default function EditPetForm({ pet }) {
       return
     }
 
-    router.refresh()
-    router.push(`/pets/${pet.id}`)
+    rwindow.location.href = `/pets/${pet.id}`
   }
 
   return (

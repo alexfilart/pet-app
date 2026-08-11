@@ -42,8 +42,7 @@ export default function AddPet() {
       return
     }
 
-    router.refresh()
-    router.push('/')
+    window.location.href = '/'
   }
 
   return (
