@@ -94,6 +94,7 @@ export default function AddPet() {
             value={form.birth_date}
             onChange={handleChange}
             className="w-full border rounded px-3 py-2"
+            max={new Date().toISOString().slice(0, 10)}
           />
         </div>
 
